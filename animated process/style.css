@@ -1,0 +1,72 @@
+/** by Gcyrillus   bread-crumbs, where you are and what next
+ */
+ html  {
+    background: #f06;
+    background: linear-gradient(45deg, #f06, yellow);
+    min-height: 100%;
+    }
+    ul {background:rgba(0,0,0,0.1);list-style-type:none;font-variant:small-caps;font-size:1.5em;color:white;
+    text-shadow:0 1px 2px black;margin:2em;position:relative;text-align:center;}
+    ul:before,ul:after {
+    content:'';
+    position:absolute;
+    border:solid 0.75em;
+    border-color:transparent  rgba(0,0,0,0.1)  rgba(0,0,0,0.1)  transparent;
+    left:-1.5em;
+    top:0;
+    }
+    ul:after {
+    left:auto;right:-1.5em;border-color:rgba(0,0,0,0.1) transparent transparent   rgba(0,0,0,0.1) ;
+    }
+    ul li {display:inline-block;padding:2px 1em 2px 1.5em;background:#789;border:dashed 1px;
+    box-shadow:0 0 0 2px #789, 3px 3px 3px  black;
+    ;border-right:0; 
+    position:relative;
+    border-radius:3px 8px 8px 3px;}
+    
+    ul li:after {
+    content:'';
+    position:absolute;
+    transform:rotate(52deg) skew(0,-15deg);
+    z-index:1;
+    box-shadow:2px -2px 2px 0px #789, 4px -2px  2px  -2px black;
+    right:-0.5em;
+    height:1.2em;
+    width:1.2em;
+    background:inherit;
+    display:inline-block;
+    border-right:dashed 1px;
+    border-top: dashed 1px;
+    }
+    ul li + li {left:-9999px;}
+    li:focus {left:0;background:#456;z-index:1;;}
+    li:focus + li {left:0px;}
+    li:last-child:focus:before {
+    content:'Cheese !';
+    position:absolute;
+    top:100px;
+    left:-4em;
+    font-size:3em;
+    background:inherit;
+    box-shadow:inherit;
+    border:inherit;
+    width:4em;
+        
+    }
+    
+    ul li:focus , li:focus:before {
+    animation: yeah 3s linear infinite;
+    outline:0;
+    transform-origin:left;
+    }
+    @keyframes yeah {
+    0% ,50% , 100%  {transform:rotate(0deg)}
+    25%  {transform:rotate(-6deg)}
+    75% {transform:rotate(3deg)}
+    }
+    
+    strike {color:white;transform:rotate(-30deg);display:inline-block;}
+    p {font-size:2em;display:table;margin: 4em auto 0;
+    border:dotted white;outline:dotted black;outline-offset:-13px;
+    background:#789;box-shadow:0 0 0 2px #789, 0 0 5px 3px yellow; ;border-radius:5px;padding:0.25em;
+    }
